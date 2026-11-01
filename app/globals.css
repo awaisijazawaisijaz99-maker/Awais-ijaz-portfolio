@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  color: #f7fbff;
+  background: #031827;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background: #031827;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.hero-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 21px;
+  border: 1px solid #13bdf2;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+  background: #13bdf2;
+  color: #06131d;
+}
+
+.hero-buttons .btn-primary:hover {
+  background: #35ccf7;
+  box-shadow: 0 0 12px rgba(19, 189, 242, 0.35);
+}
+
+.hero-buttons .btn-outline {
+  background: transparent;
+  color: #13bdf2;
+}
+
+.hero-buttons .btn-outline:hover {
+  background: #13bdf2;
+  color: #06131d;
+  box-shadow: 0 0 12px rgba(19, 189, 242, 0.3);
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .hero-buttons .btn {
+    padding: 0 16px;
+    min-height: 36px;
+  }
 }
